@@ -41,7 +41,7 @@ const Navbar = () => {
             /
           </p>
         </div>
-        <div className="flex items-center space-x-4 primaryText font-[600]">
+        <div className="lg:flex md:flex hidden items-center space-x-4 primaryText font-[600]">
           <p>Explore</p>
           <p>Create</p>
         </div>

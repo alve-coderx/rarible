@@ -13,7 +13,8 @@ import { Link } from "react-router-dom";
 const Main = () => {
   const [showMore, setShowMore] = useState(false);
   const [modal, setModal] = useState(false);
-
+  const [active,setActive] = useState(1);
+  
   const wallets = [
     { name: "MetaMask", id: 2, img: metamask },
     { name: "WalletConnect", id: 3, img: walletCn },
