@@ -14,11 +14,24 @@ const Main = () => {
   const [showMore, setShowMore] = useState(false);
   const [modal, setModal] = useState(false);
   const [active,setActive] = useState(1);
-  
+  const clickHandler = (index) => {
+    setActive((prev) => {
+      return prev === index ? index : index;
+    });
+  };
   const wallets = [
-    { name: "MetaMask", id: 2, img: metamask },
-    { name: "WalletConnect", id: 3, img: walletCn },
-    { name: "Coinbase Wallet", id: 4, img: coinbase },
+    { name: "MetaMask", id: 1, img: metamask },
+    { name: "WalletConnect", id: 2, img: walletCn },
+    { name: "Coinbase Wallet", id: 3, img: coinbase },
+  ];
+
+
+  const options = [
+    { name: "Ethereum", id: 1, img: metamask },
+    { name: "Solana", id: 2, img: walletCn },
+    { name: "Tezos", id: 3, img: coinbase },
+    { name: "Immutable X", id: 4, img: coinbase },
+    { name: "Polygon", id: 5, img: coinbase },
   ];
 
   const moreWallets = [
@@ -34,13 +47,20 @@ const Main = () => {
           <Logo />
         </div>
       </Link>
-      <div>
+      <div className="lg:w-[30rem] md:w-[30rem] ">
         <p className="text-[2.5rem] font-[700] text-black">Connect wallet </p>
         <p className="text-[1rem] text-[#9697a1] font-[600]">
           Choose how you want to connect. There are several wallet providers.
         </p>
       </div>
-      <div className=" lg:w-[30rem] md:w-[30rem] mt-5">
+      <div className="flex items-center space-x-2 my-5 text-[#9697a1] border-b border-gray-200 font-[600] lg:w-[30rem] md:w-[30rem] justify-between cursor-pointer">
+        {
+          options.map((option) => (
+            <p onClick={() => clickHandler(option.id)} className={active === option.id ? 'border-b border-black' : ''}>{option.name}</p>
+          ))
+        }
+      </div>
+      <div className=" lg:w-[30rem] md:w-[30rem] ">
         <p className="text-[.9rem] text-[#9697a1] font-[600] mb-4">Popular</p>
         <div>
           {wallets.map((wallet) => (
