@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo-bg {
+  background-color: rgb(254, 218, 3);
+}
+
+.bgHero {
+  background-image: url(./assets/hero.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menuborder {
+  border-bottom: 2px solid white;
+}
+
+.navBg {
+  background-color: rgba(25, 28, 31, 0.85);
+}
+
+
+
+.parent .child {
+  display: none; /* hides element by default */
+
+}
+
+.parent:hover .child {
+  display: flex; /* shows element on hover   */
+
+}
+
+.loader {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.gradeTxt {
+  background: linear-gradient(to right, #771ae2 0%, #d84e0e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.CarCont {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btnBg {
+  background-color: rgba(255, 255, 255, 0.04);
+}
